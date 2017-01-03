@@ -2,9 +2,9 @@ package main;
 
 public class enforcado 
 {
-	String 	palavra; //ex.: "Leitao"
-	String 	letrasRespondidas; // ex.: "ABDFG";
-	int 	state; // ( 0 - 6)
+	String 	palavra				; 	// ex.: "Leitao"
+	String 	letrasRespondidas	; 	// ex.: "ABDFG";
+	int 	state				; 	// ( 0 - 6)
 	/* 0-nada
 	 * 1-cabeça
 	 * 2-tronco
@@ -44,6 +44,7 @@ public class enforcado
 	
 	private boolean incrementer()
 	{
+		//incrementar state
 		return false;
 	}
 }
