@@ -25,11 +25,12 @@ public class enforcado
 	{
 		String output = "";
 		
-		for (char L : this.palavra.toCharArray())
+		for (char letter : this.palavra.toCharArray())
 		{
+			char L = Character.toUpperCase(letter);
 			if(letrasRespondidas.indexOf(L)>=0)
 			{
-				output+=L;
+				output+=Character.toUpperCase(L);
 			}
 			else
 			{
@@ -51,8 +52,9 @@ public class enforcado
 		}
 	}
 	
-	public void receiveLetter(char letter) //recebe letra e insere em 'letrasRespondidas'
+	public void receiveLetter(char L) //recebe letra e insere em 'letrasRespondidas'
 	{
+		char letter = Character.toUpperCase(L);
 		if		(letrasRespondidas.indexOf(letter)<0 && palavra.indexOf(letter)<0)
 		{
 			incrementer(); //aumentar state
