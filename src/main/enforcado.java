@@ -2,9 +2,9 @@ package main;
 
 public class enforcado 
 {
-	String 	palavra				; 	// ex.: "Leitao"
-	String 	letrasRespondidas	; 	// ex.: "ABDFG";
-	int 	state				; 	// ( 0 - 6)
+	private String 	palavra				; 	// ex.: "Leitao"
+	private String 	letrasRespondidas	; 	// ex.: "ABDFG";
+	private int 	state				; 	// ( 0 - 6)
 	/* 0-nada
 	 * 1-cabeça
 	 * 2-tronco
@@ -14,24 +14,70 @@ public class enforcado
 	 * 6-braço direito <--GAME OVER!
 	 */
 	//COMENTÁRIO DO COELHO
-	public enforcado()
+	public enforcado(String palavra)
 	{
-		//construtor
+		//construtor //cria o enforcado com uma palavra
+		this.palavra = palavra;
+		this.state = 0;
 	}
 	
 	public String returnCrypt () //retorna palavra encriptada -> 'palavra' rescrita com letras de 'letrasRespondidas'
 	{
+		String output = "";
 		
-		return null;  //ex.: L _ I _ A O (leitao) com 'letrasRespondidas'->"LIAOP"
+		for (char L : this.palavra.toCharArray())
+		{
+			if(letrasRespondidas.indexOf(L)>=0)
+			{
+				output+=L;
+			}
+			else
+			{
+				output+="_";
+			}
+		}
+		return output;  //ex.: L _ I _ A O (leitao) com 'letrasRespondidas'->"LIAOP"
 	}
 	
 	public boolean isVictor() //recebe returnCrypt, se não tiver underscore, ganhou!
 	{
-		return false; //true se não existirem underscores em returnCrypt
+		if(this.returnCrypt().contains("_"))
+		{
+			return false; //true se não existirem underscores em returnCrypt
+		}
+		else
+		{
+			return true;
+		}
 	}
 	
 	public void receiveLetter(char letter) //recebe letra e insere em 'letrasRespondidas'
 	{
+		if		(letrasRespondidas.indexOf(letter)<0 && palavra.indexOf(letter)<0)
+		{
+			incrementer(); //aumentar state
+			return;
+		}
+		else if (letrasRespondidas.indexOf(letter)>=0 && palavra.indexOf(letter)<0)
+		{
+			//NADA
+			return;
+		}
+		else if (letrasRespondidas.indexOf(letter)<0 && palavra.indexOf(letter)>=0)
+		{
+			//Adiciona a 'letrasRespondidas'
+			letrasRespondidas+= letter;
+			return;
+		}
+		else if (letrasRespondidas.indexOf(letter)>=0 && palavra.indexOf(letter)>=0)
+		{
+			//NADA
+		}
+		else
+		{
+			//ERRO?!
+			return;
+		}
 		//se a letra não existir em 'letrasRespondidas' nem em 'palavra'
 			//Incrementar 'state'
 		//se a letra  existir em 'letrasRespondidas' mas não em 'palavra'
@@ -42,9 +88,13 @@ public class enforcado
 			//NADA
 	}
 	
-	private boolean incrementer()
+	public int getState()
 	{
-		//incrementar state
-		return false;
+		return this.state;
+	}
+	
+	private void incrementer()
+	{
+		this.state++;
 	}
 }
