@@ -11,7 +11,7 @@ public class jogo {
 		 * 
 		 */
 
-		System.out.println("FORCAS");	
+		System.out.println("Daniel Silva teste");	
 		
 	}
 	
