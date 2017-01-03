@@ -19,6 +19,7 @@ public class enforcado
 		//construtor //cria o enforcado com uma palavra
 		this.palavra = palavra;
 		this.state = 0;
+		this.letrasRespondidas ="";
 	}
 	
 	public String returnCrypt () //retorna palavra encriptada -> 'palavra' rescrita com letras de 'letrasRespondidas'
