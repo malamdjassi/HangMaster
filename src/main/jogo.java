@@ -20,7 +20,7 @@ public class jogo {
 	  letra = (char)System.in.read();
 	  
 	  //if ()
-	  }while(p.state == 6);
+	  }while(p.state >= 6);
 	  
 	
 
