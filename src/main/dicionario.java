@@ -20,7 +20,7 @@ public class dicionario
 	public String randomizeWord()
 	{
 		//retorna palavra randomica de 'palavras'
-		return null;
+		return "SALSICHA"; //apagar a palavra depois
 	}
 	
 }
