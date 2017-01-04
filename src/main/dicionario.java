@@ -1,26 +1,23 @@
 package main;
 
-public class dicionario 
-{
+import java.util.Random;
+
+public class dicionario {
 	
 	String[] palavras=
 		{
-				"LEITAO",
-				"PORCO",
-				"BACON",
-				"PRESUNTO",
-				"SALSICHA",
+				"Argentina","Portugal","Quadro","Mercedes",
+				"Hotel","Cabra","Benfica","Porto","Tartaruga",
+				"Cadela","Escola","Autocarro","Arvore","Batata","Fiambre","Leitao",
+				"Salsicha","Porco","Cabra","Chispes","Salada","Computador","Sapato","Entremeada","Casa",
 		};
 	
-	public dicionario()
-	{
-		//construtor
-	}
 	
 	public String randomizeWord()
 	{
-		//retorna palavra randomica de 'palavras'
-		return "SALSICHA"; //apagar a palavra depois
+		Random aleatorio = new Random();
+
+		return  palavras[aleatorio.nextInt(palavras.length)].toUpperCase();
 	}
-	
+
 }
