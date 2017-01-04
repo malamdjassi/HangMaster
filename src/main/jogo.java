@@ -1,21 +1,31 @@
 package main;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class jogo {
 	 
+	static dicionario d = new dicionario();
+	static enforcado p = new enforcado(d.randomizeWord());
 
 
 	public static void main(String[] args) throws IOException 
 	{
-		dicionario d = new dicionario();
-		enforcado p = new enforcado(d.randomizeWord());
-
+		Scanner input = new Scanner(System.in);
+		
 	  do{
+		  if(p.isVictor() == false ){
 	  System.out.println("Qual é a letra que escolhe?: ");
-	  p.receiveLetter((char)System.in.read());
+	  p.receiveLetter(input.next().charAt(0));
 	  
 	  System.out.println(p.returnCrypt());
+	  //System.out.println(p);
+		  }
+		  else{
+			  System.out.println("Venceu");
+			  break;
+			  
+		  }
 	  }while(p.getState() < 6 || !p.isVictor());
 	  
 	
@@ -27,7 +37,7 @@ public class jogo {
 	public void updateGraph()
 	{
 		
-		/*switch (p.state)
+		switch (p.getState())
 		{
 		case 1: 
 			System.out.println("_____");
@@ -49,7 +59,7 @@ public class jogo {
 			System.out.println("  PERDEU");
 			break;
 		}
-	*/	
+		
 	}
 	public static void cls (){
 		int linha = 0;
