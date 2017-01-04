@@ -15,11 +15,45 @@ public class jogo {
 		
 	  do{
 		  if(p.isVictor() == false ){
+			  
+			  //teste
+			  switch (p.getState())
+				{
+				case 1: 
+					System.out.println("\n _____");
+					break;
+				case 2:
+					System.out.println("\n   |  \n  |  \n __|_");
+					break;
+				case 3:
+					System.out.println("\n   |  \n  |  \n   |  \n  |  \n __|_");
+					break;
+				case 4:
+					System.out.println("\n   |--- \n  |  \n  |  \n  |  \n __|_");
+					break;
+				case 5:
+					System.out.println("\n   |--- \n  |  \n  |  | \n  |  \n __|_");
+					break;
+				case 6:
+					System.out.println("\n  |--- \n  |  \n   |  | \n  |  0 \n __|_");
+					System.out.println("  PERDEU");
+					break;
+				}
+			  
+			  //fim de teste
+			  
+			  
+			  
+			  
+			  
 	  System.out.println("Qual é a letra que escolhe?: ");
 	  p.receiveLetter(input.next().charAt(0));
 	  
 	  System.out.println(p.returnCrypt());
-	  //System.out.println(p);
+	     
+
+	  
+	  
 		  }
 		  else{
 			  System.out.println("Venceu");
@@ -36,7 +70,7 @@ public class jogo {
 	
 	public void updateGraph()
 	{
-		
+		/*
 		switch (p.getState())
 		{
 		case 1: 
@@ -58,7 +92,7 @@ public class jogo {
 			System.out.println("  |--- \n  |  \n  |  | \n  |  0 \n __|_");
 			System.out.println("  PERDEU");
 			break;
-		}
+		}*/
 		
 	}
 	public static void cls (){
