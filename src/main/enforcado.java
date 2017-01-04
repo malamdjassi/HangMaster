@@ -24,6 +24,7 @@ public class enforcado
 	
 	public String returnCrypt () //retorna palavra encriptada -> 'palavra' rescrita com letras de 'letrasRespondidas'
 	{
+		
 		String output = "";
 		
 		for (char letter : this.palavra.toCharArray())
